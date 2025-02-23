@@ -16,7 +16,8 @@
       "test": "vitest --run",
       "tunnel": "source .env && cloudflared tunnel --no-autoupdate --url ${SHOPIFY_APP_URL}:8080 run --token ${CLOUDFLARE_API_TOKEN}",
       "typecheck": "tsc",
-      "typegen": "wrangler types && react-router typegen"
+      "typegen": "wrangler types && react-router typegen",
+      "knip": "knip"
    },
    "dependencies": {
       "@biomejs/biome": "1.9.4",
@@ -43,10 +44,12 @@
       "@shopify/app-bridge-types": "0.0.16",
       "@shopify/polaris": "13.9.3",
       "@shopify/polaris-icons": "9.3.0",
+      "@types/node": "22.13.5",
       "@types/react": "18.3.18",
       "@types/react-dom": "18.3.5",
       "globals": "16.0.0",
       "happy-dom": "17.1.2",
+      "knip": "5.44.5",
       "react-router-dom": "7.2.0",
       "typescript": "5.7.3",
       "vite": "6.1.1",
