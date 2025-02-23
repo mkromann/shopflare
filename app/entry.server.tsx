@@ -20,7 +20,7 @@ export default async function handleRequest(
 	_loadContext: AppLoadContext,
 ) {
 	const namespaces = ["app", "polaris"];
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+
 	const en: any = await Promise.all(
 		namespaces.map((ns) =>
 			fetch(new URL(`/i18n/en.${ns}.json`, request.url)) // loadContext.cloudflare.env.fetch
