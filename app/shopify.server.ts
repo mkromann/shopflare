@@ -1,5 +1,5 @@
 import { createGraphQLClient } from "@shopify/graphql-client";
-import { jwtVerify, type JWTPayload } from "jose";
+import { type JWTPayload, jwtVerify } from "jose";
 import { type AppLoadContext, redirect } from "react-router";
 import * as v from "valibot";
 
@@ -96,7 +96,7 @@ export function createShopify(context: AppLoadContext) {
 			},
 		});
 		if (!response.ok) {
-			const body: any = await response.json(); // eslint-disable-line @typescript-eslint/no-explicit-any
+			const body: any = await response.json();
 			if (typeof response === "undefined") {
 				const message = body?.errors?.message ?? "";
 				throw new ShopifyException(
@@ -366,7 +366,7 @@ export class ShopifySession {
 					session[key] = value ? new Date(Number(value)) : undefined;
 					break;
 				default:
-					(session as any)[key] = value; // eslint-disable-line @typescript-eslint/no-explicit-any
+					(session as any)[key] = value;
 					break;
 			}
 			return session;
